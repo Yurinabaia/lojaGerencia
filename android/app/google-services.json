@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "384246511522",
+    "project_id": "projetoloja-ee406",
+    "storage_bucket": "projetoloja-ee406.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384246511522:android:406cdc8e83aac9eb12a4fb",
+        "android_client_info": {
+          "package_name": "br.com.nabaiayuri.lojagerencia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "384246511522-00gd2hhhborvnkk78lmgpcsiqc8khd2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyConDm9o91gnXTcFjllHB0j_NJD2C_Mt9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "384246511522-00gd2hhhborvnkk78lmgpcsiqc8khd2p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384246511522:android:1ba9883c66ea977012a4fb",
+        "android_client_info": {
+          "package_name": "br.com.nabaiayuri.teste2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "384246511522-00gd2hhhborvnkk78lmgpcsiqc8khd2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyConDm9o91gnXTcFjllHB0j_NJD2C_Mt9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "384246511522-00gd2hhhborvnkk78lmgpcsiqc8khd2p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
