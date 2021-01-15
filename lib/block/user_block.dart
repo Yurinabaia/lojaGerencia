@@ -88,6 +88,10 @@ class UsuarioBloc extends BlocBase {
         _userController.add(_usuario.values.toList());
     });
   }
+  Map<String, dynamic> getUsuario(String uid) 
+  {
+    return _usuario[uid];
+  }
 
   void _cacelarsubscribeToOrders(String uid) 
   {

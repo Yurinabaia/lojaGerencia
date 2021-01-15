@@ -27,6 +27,8 @@ class UsuarioTab extends StatelessWidget {
             onChanged: _usuarioBlock.onChangePesquisa,
         ),
         ),
+        //Mudar função abaixo para não atualizar dinamicamente
+        
         Expanded(
         child: StreamBuilder<List> (
           stream: _usuarioBlock.outUsuaurio,

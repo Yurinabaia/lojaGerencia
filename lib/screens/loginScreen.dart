@@ -51,6 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
         body: StreamBuilder<LoginStatus>(
             stream: _loginBlock.outStatus,
             initialData: LoginStatus.LOADING,
+            // ignore: missing_return
             builder: (context, snapshot) {
               switch (snapshot.data) {
                 case LoginStatus.LOADING:
@@ -67,14 +68,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     SingleChildScrollView(
                       child: Container(
                         margin: EdgeInsets.all(10),
+                        
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: <Widget>[
-                            Icon(
-                              Icons.store_mall_directory,
-                              color: Colors.cyanAccent,
-                              size: 160,
-                            ),
+ Image.asset(
+                        'imagens/logo.png',
+                      ),
                             InputField(
                               icon: Icons.person_outline,
                               text: "Usuario",

@@ -1,6 +1,9 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:lojagerencia/block/pedidos_bloc.dart';
 import 'package:lojagerencia/block/user_block.dart';
+import 'package:lojagerencia/tabs/pedidos_tabs.dart';
 import 'package:lojagerencia/tabs/usuario_tabs.dart';
 
 //stless
@@ -16,11 +19,13 @@ class _HomeScreenState extends State<HomeScreen> {
   PageController _pageController;
   int _pagina = 0;
   UsuarioBloc _usuarioBloc;
+  PedidosBloc _pedidosBloc;
   @override
     void initState() {
       super.initState();
       _pageController = PageController();
       _usuarioBloc = UsuarioBloc();
+      _pedidosBloc = PedidosBloc();
     }
 
   @override
@@ -71,6 +76,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: BlocProvider<UsuarioBloc>(
         bloc: _usuarioBloc,
+        child: BlocProvider<PedidosBloc>(
+        bloc: _pedidosBloc,  
         child: PageView( 
         onPageChanged: (pagina) 
         {
@@ -81,13 +88,66 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: _pageController,
         children: <Widget> [
         UsuarioTab(),
-        Container(color: Colors.green,),
+        PedidosTab(),
         Container(color: Colors.indigo,)
         
         ],
        ),
       ),
       )
+    ),
+    floatingActionButton: _buildFloating(),
     );
   }
+    Widget _buildFloating()
+    {
+      switch(_pagina) {
+      case  0:
+      return SpeedDial(
+          child: Icon(Icons.sort),
+          backgroundColor: Colors.cyanAccent,
+          overlayOpacity: 0.4,
+          overlayColor: Colors.black,
+          children: [
+            SpeedDialChild(
+              child: Icon(Icons.arrow_downward, color: Colors.cyanAccent),
+              backgroundColor: Colors.white,
+              label: "Atualizar pagina",
+              labelStyle: TextStyle(fontSize: 14),
+              onTap: () {}
+            ),
+          ],
+      );
+      break;
+      case 1:
+      return SpeedDial(
+          child: Icon(Icons.sort),
+          backgroundColor: Colors.cyanAccent,
+          overlayOpacity: 0.4,
+          overlayColor: Colors.black,
+          children: [
+            SpeedDialChild(
+              child: Icon(Icons.arrow_downward, color: Colors.cyanAccent),
+              backgroundColor: Colors.white,
+              label: "Concluidos Abaixo",
+              labelStyle: TextStyle(fontSize: 14),
+              onTap: () {
+                _pedidosBloc.setOrdernacao(CriterioOrdenacao.CONCLUIDOS_ABAIXO);
+              }
+            ),
+            SpeedDialChild(
+              child: Icon(Icons.arrow_upward, color: Colors.cyanAccent),
+              backgroundColor: Colors.white,
+              label: "Concluidos Acima",
+              labelStyle: TextStyle(fontSize: 14),
+              onTap: () {
+                _pedidosBloc.setOrdernacao(CriterioOrdenacao.CONCLUIDOS_ACIMA);
+              }
+            ),
+          ],
+      );
+      
+      }
+
+    }
 }
