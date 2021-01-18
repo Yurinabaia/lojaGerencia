@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
         {
           case LoginStatus.SUCESS :
           Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => HomeScreen(),)
+            MaterialPageRoute(builder: (context) => HomeScreen(false),)
           );  
           break;
           case LoginStatus.FAIL : 
