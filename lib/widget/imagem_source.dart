@@ -27,7 +27,7 @@ class ImagemSource extends StatelessWidget {
         builder: (context) => Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                /*
+                
                 FlatButton(
                   child: Text("Câmera"),
                   onPressed: () async {
@@ -35,7 +35,7 @@ class ImagemSource extends StatelessWidget {
                         await ImagePicker.pickImage(source: ImageSource.camera);
                     imageSelecionar(image);
                   },
-                ),*/
+                ),
                 FlatButton(
                   child: Text("Galeria"),
                   onPressed: () async {

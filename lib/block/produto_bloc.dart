@@ -48,6 +48,9 @@ class ProdutoBlock extends BlocBase {
   void saveImage(List img) {
     salvarDados['img'] = img;
   }
+  void savePrescri(List prescri) {
+    salvarDados['prescricao'] = prescri;
+  }
 
   Future<bool> saveProduto() async {
     _produtoCarreandoController.add(true);

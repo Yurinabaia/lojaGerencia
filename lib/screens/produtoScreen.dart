@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lojagerencia/block/produto_bloc.dart';
 import 'package:lojagerencia/validation/produto_validation.dart';
 import 'package:lojagerencia/widget/imagem_widget.dart';
+import 'package:lojagerencia/widget/produto_prescricao.dart';
 //STLESS
 //STFULL
 
@@ -123,6 +124,17 @@ class _ProdutoScreenState extends State<ProdutoScreen> with ProdutoValidacao {
                         onSaved: _produtoBlock.savePreco,
                         validator: validationPreco,
                       ),
+                      SizedBox(height: 16,),
+                      Text("Prescricao",
+                          style: TextStyle(color: Colors.grey, fontSize: 12)),
+                          ProdutoPrescricao(
+                            context: context,
+                            initialValue: snapshot.data["prescricao"],
+                            onSaved: _produtoBlock.savePrescri,
+                            validator: (s){
+                              if(s.isEmpty) return "";
+                            },
+                          ),
                     ],
                   );
                 }),
