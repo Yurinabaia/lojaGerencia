@@ -11,7 +11,6 @@ import 'package:lojagerencia/tabs/usuario_tabs2.dart';
 //stless
 //stfull
 
-// ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
   bool i;
   HomeScreen(this.i);
